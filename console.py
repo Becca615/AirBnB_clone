@@ -12,42 +12,45 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
+
 class HBNBCommand(cmd.Cmd):
     """console class"""
     prompt = '(hbnb) '
     __my_classes = {"BaseModel",
                     "User"}
-  
+
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
 
-     def do_EOF(self, arg):
+    def do_EOF(self, arg):
         """Exits Console"""
         return True
 
-     def emptyline(self):
+    def emptyline(self):
         """Overwrites the emptyline command"""
         return False
 
-     def do_create(self, arg):
-       """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id"""
-     if len(arg) == 0:
-         print("** class name missing **")
-     elif arg not in HBNBCommand.__my_classes:
-         print("** class doesn't exist **")
-      else:
+    def do_create(self, arg):
+        """Creates a new instance of BaseModel, saves it (to the JSON file)
+ and prints the id"""
+        if len(arg) == 0:
+            print("** class name missing **")
+        elif arg not in HBNBCommand.__my_classes:
+            print("** class doesn't exist **")
+        else:
             print(eval(arg)().id)
             models.storage.save()
 
-      def do_show(self, arg):
-          """Prints the string representation of an instance based on the class name and id Usage: `$ show <class name> <id>
+    def do_show(self, arg):
+        """Prints the string representation of an instance based on the class
+        name and id Usage: `$ show <class name> <id>
          """
-       obj_dict = models.storage.all()
+        obj_dict = models.storage.all()
 
-       if len(arg) == 0:
-          print("** class name missing **")
-       else:
+        if len(arg) == 0:
+            print("** class name missing **")
+        else:
             tokens = arg.split()
 
             if tokens[0] not in HBNBCommand.__my_classes:
@@ -59,9 +62,9 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print(obj_dict[tokens[0] + "." + tokens[1]])
 
-        def do_destroy(self, arg):
-           """Deletes an instance based on the class name and id"""
-            obj_dict = models.storage.all()
+    def do_destroy(self, arg):
+        """Deletes an instance based on the class name and id"""
+        obj_dict = models.storage.all()
 
         if len(arg) == 0:
             print("** class name is missing **")
@@ -78,8 +81,9 @@ class HBNBCommand(cmd.Cmd):
                 del obj_dict[tokens[0] + '.' + tokens[1]]
                 models.storage.save()
 
-          def do_all(self, arg):
-             """Prints all string representation of all instances based or not on the class name
+    def do_all(self, arg):
+        """Prints all string representation of all instances based
+        or not on the class name
         Usage: '$ all <class name>'
         """
         obj_dict = models.storage.all()
@@ -97,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
                 selected.append(each.__str__())
             print(selected.__str__())
 
-         def do_update(self, arg):
+    def do_update(self, arg):
         """Updates an instance based on the class name and id
         by adding or updating attribute (save the change to the JSON file
         Usage: update <class name> <id> <attribute name> "<attribute value>"
@@ -129,6 +133,5 @@ class HBNBCommand(cmd.Cmd):
                     obj.__dict__[tokens[2]] = tokens[3]
                 models.storage.save()
 
-     if __name__ == '__main__':
+    if __name__ == '__main__':
         HBNBCommand().cmdloop()
-             
