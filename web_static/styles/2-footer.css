@@ -2,7 +2,8 @@ footer div{
     background-color: #00FF00;
     width: 100%;
     bottom: 0;
-    text-align: center;
     height: 60px;
+    text-align: center;
     position: fixed;
 }
+
