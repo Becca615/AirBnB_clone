@@ -1,3 +1,4 @@
+# AirBnB_clone
 **# 0x00. AirBnB clone - The console**
 
 The console is the first segment of the AirBnB project at ALX School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
@@ -48,7 +49,7 @@ of the file `console.py` at the command line.
 This project is interpreted/tested on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 
 ## Installation
-* Clone this repository: `git clone "https://github.com/Anteneh2121/AirBnB_clone.git"`
+* Clone this repository: `git clone "https://github.com/Becca615/AirBnB_clone.git"`
 * Access AirBnb directory: `cd AirBnB_clone`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
@@ -285,6 +286,3 @@ folder. To run the entire test suite simultaneously, execute the following comma
 ```
 $ python3 unittest -m discover tests
 ```
-
-Alternatively, you can specify a single test file to run at a time:
-
