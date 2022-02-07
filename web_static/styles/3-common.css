@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     margin: 0;
     padding: 0;
@@ -5,4 +6,14 @@ body{
     font-size: 14px;
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background: logo("../images/icon.png")
+=======
+/* Body style */
+body {
+	margin: 0;
+	padding: 0;
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular, "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	
+>>>>>>> 7d48f905d6cf5406872e39a7873718255d20254b
 }
